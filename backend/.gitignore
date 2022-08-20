@@ -1,6 +1,7 @@
 HELP.md
-target/
 !target/backend-0.0.1-SNAPSHOT.jar
+target/
+images/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
