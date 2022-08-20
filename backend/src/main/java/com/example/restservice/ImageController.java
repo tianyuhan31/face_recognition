@@ -26,7 +26,7 @@ import com.example.helper.CustomVision;
 
 @RestController
 //@RequestMapping("/images")
-@CrossOrigin(origins = "http://localhost:8000")
+@CrossOrigin(origins = "${FRONTEND_HOST:http://localhost:8000}")
 public class ImageController {
     
     final String connectStr = "DefaultEndpointsProtocol=https;AccountName=imagestoragehty31;AccountKey=nJzlbGPD2cinnxZtI+KTBbkUZnmVijyn8hSCnVR/uUNPyZ2xllxaTBeXILkP4C4GvNjAY3OVyAXG+AStKSa9Jw==;EndpointSuffix=core.windows.net";
