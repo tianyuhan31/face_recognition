@@ -2,7 +2,7 @@
   // The width and height of the captured photo. We will set the
   // width to the value defined here, but the height will be
   // calculated based on the aspect ratio of the input stream.
-
+  var BACKEND_HOST = "https://facerecognitionbe.azurewebsites.net";
   var width = 320;    // We will scale the photo width to this
   var height = 0;     // This will be computed based on the input stream
 
@@ -103,7 +103,7 @@
 
   function postImage(data) {
     console.log(data);
-    fetch('http://localhost:8080/images', {
+    fetch(BACKEND_HOST + '/images', {
       method: 'POST',
       body: data
     })
@@ -117,7 +117,7 @@
 
 function validateImage(data) {
     
-  fetch('http://localhost:8080/validate', {
+  fetch(BACKEND_HOST + '/validate', {
     method: 'POST',
     body: data
   })
