@@ -2,7 +2,8 @@
   // The width and height of the captured photo. We will set the
   // width to the value defined here, but the height will be
   // calculated based on the aspect ratio of the input stream.
-  var BACKEND_HOST = "https://facerecognitionbe.azurewebsites.net";
+  // var BACKEND_HOST = "https://facerecognitionbe.azurewebsites.net";
+  var BACKEND_HOST = "http://backend-service:8080";
   var width = 320;    // We will scale the photo width to this
   var height = 0;     // This will be computed based on the input stream
 
@@ -135,6 +136,17 @@ function validateImage(data) {
   });
 }
 
+function getGreeting(){
+  fetch(BACKEND_HOST + '/greeting', {
+    method: 'GET'
+  })
+  .then(result => {
+    console.log('Success:', result);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
   
 
   // Set up our event listener to run the startup process
