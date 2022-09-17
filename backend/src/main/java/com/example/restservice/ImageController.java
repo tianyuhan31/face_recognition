@@ -7,8 +7,6 @@ import java.util.Base64;
 import java.util.UUID;
 
 import org.json.JSONException;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,9 +34,9 @@ public class ImageController {
         byte[] decode = Base64.getDecoder().decode(base64);
         String imageName = UUID.randomUUID() + ".png";
         saveImageToFile(decode, imageName);
-        CustomVision.uploadImage(CustomVision.tagEric, "./images/" + imageName);
-        uploadToCloud("./images/" + imageName);
-        
+        //CustomVision.uploadImage(CustomVision.tagEric, "./images/" + imageName);
+        //uploadToCloud("./images/" + imageName);
+        System.out.println(data);
         return new ResponseEntity<Object>("image saved sucessfully", HttpStatus.OK);
     }
 
